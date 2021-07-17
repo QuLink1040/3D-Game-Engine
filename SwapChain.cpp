@@ -25,6 +25,8 @@ bool SwapChain::init(HWND hwnd, UINT width, UINT height)
 
 	HRESULT hr = GraphicsEngine::get()->m_dxgi_factory->CreateSwapChain(device, &desc, &m_swap_chain);
 
+	if (FAILED(hr)) return false;
+
 	ID3D11Texture2D* buffer=NULL;
 	m_swap_chain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&buffer);
 
