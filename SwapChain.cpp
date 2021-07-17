@@ -21,21 +21,32 @@ bool SwapChain::init(HWND hwnd, UINT width, UINT height)
 	desc.OutputWindow = hwnd;
 	desc.SampleDesc.Count = 1;
 	desc.SampleDesc.Quality = 0;
-	desc.Windowed = true;
+	desc.Windowed = TRUE;
 
+	//Create swap chain for window indicated by HWND
 	HRESULT hr = GraphicsEngine::get()->m_dxgi_factory->CreateSwapChain(device, &desc, &m_swap_chain);
 
-	if (FAILED(hr)) return false;
+	if (FAILED(hr))
+	{
+		return false;
+	}
 
-	ID3D11Texture2D* buffer=NULL;
-	m_swap_chain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&buffer);
+	//Get back buffer color and create render target view
+	ID3D11Texture2D* buffer = NULL;
+	hr = m_swap_chain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&buffer);
 
-	if (FAILED(hr)) return false;
+	if (FAILED(hr))
+	{
+		return false;
+	}
 
 	hr = device->CreateRenderTargetView(buffer, NULL, &m_rtv);
 	buffer->Release();
 
-	if (FAILED(hr)) return false;
+	if (FAILED(hr))
+	{
+		return false;
+	}
 
 	return true;
 }
@@ -43,6 +54,7 @@ bool SwapChain::init(HWND hwnd, UINT width, UINT height)
 bool SwapChain::present(bool vsync)
 {
 	m_swap_chain->Present(vsync, NULL);
+
 	return true;
 }
 
@@ -51,4 +63,8 @@ bool SwapChain::release()
 	m_swap_chain->Release();
 	delete this;
 	return true;
+}
+
+SwapChain::~SwapChain()
+{
 }

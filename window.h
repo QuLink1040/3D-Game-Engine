@@ -2,30 +2,30 @@
 #include <Windows.h>
 
 
-class Window{
-public: 
+
+class Window
+{
+public:
 	Window();
-	//Initialises window
+	//Initialize the window
 	bool init();
-
 	bool broadcast();
-
-	//Releases window
+	//Release the window
 	bool release();
-	
 	bool isRun();
-	
+
 	RECT getClientWindowRect();
 	void setHWND(HWND hwnd);
 
-	//Event methods
+
+	//EVENTS
 	virtual void onCreate();
 	virtual void onUpdate();
 	virtual void onDestroy();
 
 
+	~Window();
 protected:
 	HWND m_hwnd;
 	bool m_is_run;
 };
-
