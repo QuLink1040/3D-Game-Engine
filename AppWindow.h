@@ -2,6 +2,7 @@
 #include "window.h"
 #include "GraphicsEngine.h"
 #include "SwapChain.h"
+#include "DeviceContext.h"
 
 class AppWindow: public Window{
 	// Inherited via Window
