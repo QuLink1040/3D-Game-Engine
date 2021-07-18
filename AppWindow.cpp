@@ -8,6 +8,7 @@ struct vec3
 struct vertex
 {
 	vec3 position;
+	vec3 color;
 };
 
 AppWindow::AppWindow()
@@ -30,10 +31,10 @@ void AppWindow::onCreate()
 	vertex list[] =
 	{
 		//X - Y - Z
-		{-0.5f,-0.5f,0.0f}, // POS1
-		{-0.5f,0.5f,0.0f}, // POS2
-		{0.5f,-0.5f,0.0f}, // POS3
-		{ 0.5f,0.5f,0.0f}, //POS4
+		{-0.5f,-0.5f,0.0f, 0,0,0}, // POS1
+		{-0.5f,0.5f,0.0f,  0,0,0}, // POS2
+		{0.5f,-0.5f,0.0f,  1,1,1}, // POS3
+		{ 0.5f,0.5f,0.0f,  1,1,1}, //POS4
 	};
 
 	m_vb = GraphicsEngine::get()->createVertexBuffer();
@@ -46,6 +47,8 @@ void AppWindow::onCreate()
 	m_vs = GraphicsEngine::get()->createVertexShader(shader_byte_code, size_shader);
 
 	m_vb->load(list, sizeof(vertex), size_list, shader_byte_code, size_shader);
+
+	GraphicsEngine::get()->releaseCompiledShader();
 
 	GraphicsEngine::get()->compilePixelShader(L"PixelShader.hlsl", "psmain", &shader_byte_code, &size_shader);
 
