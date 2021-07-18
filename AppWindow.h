@@ -12,6 +12,9 @@ class AppWindow : public Window
 {
 public:
 	AppWindow();
+
+	void updateQuadPosition();
+
 	~AppWindow();
 
 	// Inherited via Window
