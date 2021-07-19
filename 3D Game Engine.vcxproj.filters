@@ -31,6 +31,12 @@
     <ClCompile Include="ConstantBuffer.cpp">
       <Filter>Game Engine\Graphics Engine\ConstantBuffer</Filter>
     </ClCompile>
+    <ClCompile Include="Matrix4x4.cpp">
+      <Filter>Game Engine\Math\Matrix4x4</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3D.cpp">
+      <Filter>Game Engine\Math\Vector3D</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppWindow.h">
@@ -60,11 +66,11 @@
     <ClInclude Include="ConstantBuffer.h">
       <Filter>Game Engine\Graphics Engine\ConstantBuffer</Filter>
     </ClInclude>
-    <ClInclude Include="Vector3D.h">
-      <Filter>Game Engine\Math</Filter>
-    </ClInclude>
     <ClInclude Include="Matrix4x4.h">
-      <Filter>Game Engine\Math</Filter>
+      <Filter>Game Engine\Math\Matrix4x4</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3D.h">
+      <Filter>Game Engine\Math\Vector3D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +106,12 @@
     </Filter>
     <Filter Include="Game Engine\Math">
       <UniqueIdentifier>{a23c5ab2-9651-46a4-b569-7a9a97b6cf4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Math\Matrix4x4">
+      <UniqueIdentifier>{20085c79-d570-40f0-ba9e-c879b951f198}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Math\Vector3D">
+      <UniqueIdentifier>{283bab8e-0b63-4eee-939f-dad40d7b3479}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
