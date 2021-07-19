@@ -4,11 +4,12 @@
 #include "SwapChain.h"
 #include "DeviceContext.h"
 #include "VertexBuffer.h"
+#include "IndexBuffer.h"
 #include "ConstantBuffer.h"
 #include "VertexShader.h"
 #include "PixelShader.h"
 
-class AppWindow : public Window
+class AppWindow: public Window
 {
 public:
 	AppWindow();
@@ -22,21 +23,19 @@ public:
 	virtual void onUpdate() override;
 	virtual void onDestroy() override;
 private:
-	SwapChain* m_swap_chain;
+	SwapChain * m_swap_chain;
 	VertexBuffer* m_vb;
 	VertexShader* m_vs;
 	PixelShader* m_ps;
 	ConstantBuffer* m_cb;
-
+	IndexBuffer* m_ib;
 private:
-	long m_old_delta = 0;
-	long m_new_delta = 0;
-	float m_delta_time = 0;
+	long m_old_delta;
+	long m_new_delta;
+	float m_delta_time;
 
-	unsigned long m_old_time;
-	float m_angle;
-
-private:
 	float m_delta_pos;
 	float m_delta_scale;
+	float m_delta_rot;
 };
+

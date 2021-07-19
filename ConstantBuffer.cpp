@@ -6,7 +6,7 @@ ConstantBuffer::ConstantBuffer()
 {
 }
 
-bool ConstantBuffer::load(void* buffer, UINT size_buffer)
+bool ConstantBuffer::load(void * buffer, UINT size_buffer)
 {
 	if (m_buffer)m_buffer->Release();
 
@@ -28,17 +28,18 @@ bool ConstantBuffer::load(void* buffer, UINT size_buffer)
 	return true;
 }
 
-void ConstantBuffer::update(DeviceContext* context, void* buffer)
+void ConstantBuffer::update(DeviceContext * context, void * buffer)
 {
 	context->m_device_context->UpdateSubresource(this->m_buffer, NULL, NULL, buffer, NULL, NULL);
 }
 
 bool ConstantBuffer::release()
 {
-	if (m_buffer) m_buffer->Release();
+	if (m_buffer)m_buffer->Release();
 	delete this;
 	return true;
 }
+
 
 ConstantBuffer::~ConstantBuffer()
 {

@@ -1,18 +1,24 @@
 #include "Window.h"
 
+//Window* window=nullptr;
+
 Window::Window()
 {
+	
 }
 
-LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
+
+LRESULT CALLBACK WndProc(HWND hwnd,UINT msg, WPARAM wparam, LPARAM lparam)
 {
+	//GetWindowLong(hwnd,)
 	switch (msg)
 	{
 	case WM_CREATE:
 	{
-		//Window creation
+		// Event fired when the window is created
+		// collected here..
 		Window* window = (Window*)((LPCREATESTRUCT)lparam)->lpCreateParams;
-		
+		// .. and then stored for later lookup
 		SetWindowLongPtr(hwnd, GWLP_USERDATA, (LONG_PTR)window);
 		window->setHWND(hwnd);
 		window->onCreate();
@@ -21,12 +27,13 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 
 	case WM_DESTROY:
 	{
-		//Window destruction
-		Window* window = (Window*)GetWindowLongPtr(hwnd, GWLP_USERDATA);
+		// Event fired when the window is destroyed
+		Window* window =(Window*) GetWindowLongPtr(hwnd, GWLP_USERDATA);
 		window->onDestroy();
 		::PostQuitMessage(0);
 		break;
 	}
+
 
 	default:
 		return ::DefWindowProc(hwnd, msg, wparam, lparam);
@@ -38,6 +45,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 
 bool Window::init()
 {
+
+
 	//Setting up WNDCLASSEX object
 	WNDCLASSEX wc;
 	wc.cbClsExtra = NULL;
@@ -53,22 +62,32 @@ bool Window::init()
 	wc.style = NULL;
 	wc.lpfnWndProc = &WndProc;
 
-	if (!::RegisterClassEx(&wc))
+	if (!::RegisterClassEx(&wc)) // If the registration of class will fail, the function will return false
 		return false;
 
-		//Window creation
-	m_hwnd = ::CreateWindowEx(WS_EX_OVERLAPPEDWINDOW, L"MyWindowClass", L"3D Game Engine",
-		WS_CAPTION | WS_SYSMENU, CW_USEDEFAULT, CW_USEDEFAULT, 1280, 720,
+	/*if (!window)
+		window = this;*/
+
+	//Creation of the window
+	m_hwnd=::CreateWindowEx(WS_EX_OVERLAPPEDWINDOW, L"MyWindowClass", L"DirectX Application", 
+		WS_CAPTION|WS_SYSMENU, CW_USEDEFAULT, CW_USEDEFAULT, 1024, 768,
 		NULL, NULL, NULL, this);
 
-	if (!m_hwnd)
+	//if the creation fail return false
+	if (!m_hwnd) 
 		return false;
 
+	//show up the window
 	::ShowWindow(m_hwnd, SW_SHOW);
 	::UpdateWindow(m_hwnd);
 
-	//Indicates that the window is initialized and running
+
+	
+
+	//set this flag to true to indicate that the window is initialized and running
 	m_is_run = true;
+
+
 
 	return true;
 }
@@ -93,6 +112,7 @@ bool Window::broadcast()
 
 bool Window::release()
 {
+	//Destroy the window
 	if (!::DestroyWindow(m_hwnd))
 		return false;
 

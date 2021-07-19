@@ -3,14 +3,16 @@
 
 class DeviceContext;
 
-class ConstantBuffer
+class IndexBuffer
 {
 public:
-	ConstantBuffer();
-	bool load(void* buffer, UINT size_buffer);
-	void update(DeviceContext* context, void* buffer);
+	IndexBuffer();
+	bool load(void* list_indices, UINT size_list);
+	UINT getSizeIndexList();
 	bool release();
-	~ConstantBuffer();
+	~IndexBuffer();
+private:
+	UINT m_size_list;
 private:
 	ID3D11Buffer * m_buffer;
 private:

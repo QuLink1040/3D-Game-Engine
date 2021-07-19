@@ -12,16 +12,6 @@ Vector3D::Vector3D(const Vector3D& vector) :m_x(vector.m_x), m_y(vector.m_y), m_
 {
 }
 
-Vector3D Vector3D::vectorFix(const Vector3D& vector)
-{
-	Vector3D v_temp;
-	v_temp.m_x = vector.m_x / 2;
-	v_temp.m_y = vector.m_y / 2;
-	v_temp.m_z = vector.m_z / 2;
-
-	return v_temp;
-}
-
 Vector3D Vector3D::lerp(const Vector3D& start, const Vector3D& end, float delta)
 {
 	Vector3D v;

@@ -31,11 +31,8 @@
     <ClCompile Include="ConstantBuffer.cpp">
       <Filter>Game Engine\Graphics Engine\ConstantBuffer</Filter>
     </ClCompile>
-    <ClCompile Include="Matrix4x4.cpp">
-      <Filter>Game Engine\Math\Matrix4x4</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector3D.cpp">
-      <Filter>Game Engine\Math\Vector3D</Filter>
+    <ClCompile Include="IndexBuffer.cpp">
+      <Filter>Game Engine\Graphics Engine\IndexBuffer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +68,9 @@
     </ClInclude>
     <ClInclude Include="Vector3D.h">
       <Filter>Game Engine\Math\Vector3D</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexBuffer.h">
+      <Filter>Game Engine\Graphics Engine\IndexBuffer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +112,9 @@
     </Filter>
     <Filter Include="Game Engine\Math\Vector3D">
       <UniqueIdentifier>{283bab8e-0b63-4eee-939f-dad40d7b3479}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\IndexBuffer">
+      <UniqueIdentifier>{d045ce31-eece-4433-b08c-96a9b1fc388e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
