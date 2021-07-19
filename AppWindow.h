@@ -29,9 +29,12 @@ private:
 	ConstantBuffer* m_cb;
 
 private:
-	float m_old_delta = 0;
-	float m_new_delta = 0;
+	long m_old_delta = 0;
+	long m_new_delta = 0;
 	float m_delta_time = 0;
+
+	unsigned long m_old_time;
+	float m_angle;
 
 private:
 	float m_delta_pos;

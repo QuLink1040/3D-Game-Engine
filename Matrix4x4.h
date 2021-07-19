@@ -13,6 +13,8 @@ public:
 
 	void setScale(const Vector3D& scale);
 
+	void operator*=(const Matrix4x4& matrix);
+
 	void setOrthoLH(float width, float height, float near_plane, float far_plane);
 
 	~Matrix4x4();
