@@ -143,7 +143,7 @@ PixelShader* RenderSystem::createPixelShader(const void* shader_byte_code, size_
 	PixelShader* ps = nullptr;
 	try
 	{
-		ps = new PixelShader * ps = new PixelShader(shader_byte_code, byte_code_size, this);;
+		ps = new PixelShader(shader_byte_code, byte_code_size, this);
 	}
 	catch (...) {}
 	return ps;
