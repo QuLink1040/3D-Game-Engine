@@ -40,6 +40,24 @@
     <ClCompile Include="RenderSystem.cpp">
       <Filter>Game Engine\Graphics Engine\RenderSystem</Filter>
     </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>Game Engine\Graphics Engine\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>Game Engine\Graphics Engine\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\TextureManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\TextureManager</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshManager.cpp">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\MeshManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\MeshManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppWindow.h">
@@ -96,6 +114,30 @@
     <ClInclude Include="Prerequisites.h">
       <Filter>Game Engine\Graphics Engine</Filter>
     </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Game Engine\Graphics Engine\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Game Engine\Graphics Engine\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2D.h">
+      <Filter>Game Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshManager.h">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\MeshManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\MeshManager</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexMesh.h">
+      <Filter>Game Engine\Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="App">
@@ -140,6 +182,15 @@
     <Filter Include="Game Engine\Graphics Engine\RenderSystem\Vertex Shader">
       <UniqueIdentifier>{36b09336-3986-446a-aae0-aa457b894477}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game Engine\Graphics Engine\ResourceManager">
+      <UniqueIdentifier>{3ea18650-b85e-4614-821c-253ebcd6b3fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\ResourceManager\TextureManager">
+      <UniqueIdentifier>{6dbae982-5608-47ca-ac89-92a9548b2f1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\ResourceManager\MeshManager">
+      <UniqueIdentifier>{ef28b37f-bb95-402b-85eb-722cf55e12eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="VertexShader.hlsl">
@@ -147,6 +198,9 @@
     </FxCompile>
     <FxCompile Include="PixelShader.hlsl">
       <Filter>App</Filter>
+    </FxCompile>
+    <FxCompile Include="VertexMeshLayoutShader.hlsl">
+      <Filter>Game Engine\Graphics Engine</Filter>
     </FxCompile>
   </ItemGroup>
 </Project>
