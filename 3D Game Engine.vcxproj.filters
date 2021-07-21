@@ -40,6 +40,18 @@
     <ClCompile Include="RenderSystem.cpp">
       <Filter>Game Engine\Graphics Engine\RenderSystem</Filter>
     </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>Game Engine\Graphics Engine\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>Game Engine\Graphics Engine\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\TextureManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\TextureManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppWindow.h">
@@ -96,6 +108,18 @@
     <ClInclude Include="Prerequisites.h">
       <Filter>Game Engine\Graphics Engine</Filter>
     </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Game Engine\Graphics Engine\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Game Engine\Graphics Engine\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\TextureManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="App">
@@ -139,6 +163,12 @@
     </Filter>
     <Filter Include="Game Engine\Graphics Engine\RenderSystem\Vertex Shader">
       <UniqueIdentifier>{36b09336-3986-446a-aae0-aa457b894477}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\ResourceManager">
+      <UniqueIdentifier>{b69ebce3-4dcb-4220-82c6-b51f83ab1c16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\ResourceManager\TextureManager">
+      <UniqueIdentifier>{de77902f-9b44-4550-b901-ee06ff47fcf5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
