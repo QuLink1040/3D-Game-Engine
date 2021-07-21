@@ -8,7 +8,7 @@
 #include "ConstantBuffer.h"
 #include "VertexShader.h"
 #include "PixelShader.h"
-#include "InputListener.h"
+#include"InputListener.h"
 #include "Matrix4x4.h"
 
 class AppWindow: public Window, public InputListener
@@ -40,12 +40,11 @@ public:
 
 private:
 	SwapChainPtr m_swap_chain;
+	VertexBufferPtr m_vb;
 	VertexShaderPtr m_vs;
 	PixelShaderPtr m_ps;
 	ConstantBufferPtr m_cb;
-	TexturePtr m_wood_tex;
-	MeshPtr m_mesh;
-
+	IndexBufferPtr m_ib;
 private:
 	long m_old_delta;
 	long m_new_delta;
@@ -55,8 +54,8 @@ private:
 	float m_delta_scale;
 	float m_delta_rot;
 
-	float m_rot_x = 0.0f;
-	float m_rot_y = 0.0f;
+	float m_rot_x = 0;
+	float m_rot_y = 0;
 
 	float m_scale_cube = 1;
 
