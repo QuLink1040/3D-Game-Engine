@@ -18,6 +18,7 @@ SwapChain::SwapChain(HWND hwnd, UINT width, UINT height, RenderSystem* system) :
 	desc.OutputWindow = hwnd;
 	desc.SampleDesc.Count = 1;
 	desc.SampleDesc.Quality = 0;
+	desc.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH;
 	desc.Windowed = TRUE;
 
 	//Create the swap chain for the window indicated by HWND parameter
@@ -52,6 +53,12 @@ SwapChain::~SwapChain()
 	m_rtv->Release();
 	m_dsv->Release();
 	m_swap_chain->Release();
+}
+
+void SwapChain::setFullScreen(bool fullscreen, unsigned int width, unsigned int height)
+{
+	resize(width, height);
+	m_swap_chain->SetFullscreenState(fullscreen, nullptr);
 }
 
 void SwapChain::reloadBuffers(unsigned int width, unsigned int height)

@@ -10,6 +10,7 @@ public:
 	bool isRun();
 
 	RECT getClientWindowRect();
+	RECT getScreenSize();
 
 
 	//EVENTS

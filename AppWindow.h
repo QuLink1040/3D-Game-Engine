@@ -39,6 +39,7 @@ public:
 	virtual void onRightMouseUp(const Point& mouse_pos) override;
 
 public:
+	void render();
 	void update();
 	void updateCamera();
 	void updateModel();
@@ -85,5 +86,6 @@ private:
 	Matrix4x4 m_proj_cam;
 
 	bool m_play_state = false;
+	bool m_fullscreen_state = false;
 };
 
