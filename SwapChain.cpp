@@ -45,6 +45,32 @@ SwapChain::SwapChain(HWND hwnd, UINT width, UINT height, RenderSystem* system) :
 	{
 		throw std::exception("Swap chain not created successfully");
 	}
+
+	D3D11_TEXTURE2D_DESC tex_desc = {};
+	tex_desc.Width = width;
+	tex_desc.Height = height;
+	tex_desc.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
+	tex_desc.Usage = D3D11_USAGE_DEFAULT;
+	tex_desc.BindFlags = D3D11_BIND_DEPTH_STENCIL;
+	tex_desc.SampleDesc.Count = 1;
+	tex_desc.SampleDesc.Quality = 0;
+	tex_desc.MiscFlags = 0;
+	tex_desc.ArraySize = 1;
+	tex_desc.CPUAccessFlags = 0;
+
+	hr = device->CreateTexture2D(&tex_desc, nullptr, &buffer);
+
+	if (FAILED(hr))
+	{
+		throw std::exception("Swap chain not created successfully");
+	}
+
+	hr = device->CreateDepthStencilView(buffer, NULL, &m_dsv);
+
+	if (FAILED(hr))
+	{
+		throw std::exception("Swap chain not created successfully");
+	}
 }
 
 bool SwapChain::present(bool vsync)
