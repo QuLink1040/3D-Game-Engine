@@ -40,6 +40,18 @@
     <ClCompile Include="RenderSystem.cpp">
       <Filter>Game Engine\Graphics Engine\RenderSystem</Filter>
     </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>Game Engine\Graphics Engine\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>Game Engine\Graphics Engine\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\TextureManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\TextureManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppWindow.h">
@@ -96,6 +108,19 @@
     <ClInclude Include="Prerequisites.h">
       <Filter>Game Engine\Graphics Engine</Filter>
     </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Game Engine\Graphics Engine\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Game Engine\Graphics Engine\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="App">
@@ -139,6 +164,12 @@
     </Filter>
     <Filter Include="Game Engine\Graphics Engine\RenderSystem\Vertex Shader">
       <UniqueIdentifier>{36b09336-3986-446a-aae0-aa457b894477}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\ResourceManager">
+      <UniqueIdentifier>{70906add-1a4b-4b83-85d2-23e68c052c61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\ResourceManager\TextureManager">
+      <UniqueIdentifier>{6586754f-504e-4072-8700-b14b723c37f2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
