@@ -18,6 +18,7 @@ public:
 	virtual void onDestroy();
 	virtual void onFocus();
 	virtual void onFocusLoss();
+	virtual void onSize();
 
 
 	~Window();

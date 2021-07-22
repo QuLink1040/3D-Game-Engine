@@ -52,6 +52,8 @@ void AppWindow::updateCamera()
 
 	new_pos = new_pos + world_cam.getXDirection() * (m_rightward * 0.05f);
 
+	new_pos = new_pos + world_cam.getYDirection() * (m_upward * 0.05f);
+
 	world_cam.setTranslation(new_pos);
 
 	m_world_cam = world_cam;
@@ -129,7 +131,7 @@ void AppWindow::onCreate()
 	Window::onCreate();
 
 	InputSystem::get()->addListener(this);
-	InputSystem::get()->showCursor(false);
+	//InputSystem::get()->showCursor(false);
 
 	m_wood_tex = GraphicsEngine::get()->getTextureManager()->createTextureFromFile(L"Assets\\Textures\\brick.png");
 	m_sky_tex = GraphicsEngine::get()->getTextureManager()->createTextureFromFile(L"Assets\\Textures\\sky.jpg");
@@ -208,27 +210,38 @@ void AppWindow::onFocusLoss()
 	InputSystem::get()->removeListener(this);
 }
 
+void AppWindow::onSize()
+{
+	RECT rc = this->getClientWindowRect();
+	m_swap_chain->resize(rc.right, rc.bottom);
+	onUpdate();
+}
+
 void AppWindow::onKeyDown(int key)
 {
 	if (key == 'W')
 	{
-		//m_rot_x += 3.14f*m_delta_time;
 		m_forward = 1.0f;
 	}
 	else if (key == 'S')
 	{
-		//m_rot_x -= 3.14f*m_delta_time;
 		m_forward = -1.0f;
 	}
 	else if (key == 'A')
 	{
-		//m_rot_y += 3.14f*m_delta_time;
 		m_rightward = -1.0f;
 	}
 	else if (key == 'D')
 	{
-		//m_rot_y -= 3.14f*m_delta_time;
 		m_rightward = 1.0f;
+	}
+	else if (key == VK_LSHIFT)
+	{
+		m_upward = -1.0f;
+	}
+	else if (key == VK_SPACE)
+	{
+		m_upward = 1.0f;
 	}
 }
 
@@ -236,14 +249,21 @@ void AppWindow::onKeyUp(int key)
 {
 	m_forward = 0.0f;
 	m_rightward = 0.0f;
+	m_upward = 0.0f;
+
+	if (key == 'G')
+	{
+		m_play_state = (m_play_state) ? false : true;
+		InputSystem::get()->showCursor(!m_play_state);
+	}
 }
 
 void AppWindow::onMouseMove(const Point& mouse_pos)
 {
+	if (!m_play_state) return;
+
 	int width = (this->getClientWindowRect().right - this->getClientWindowRect().left);
 	int height = (this->getClientWindowRect().bottom - this->getClientWindowRect().top);
-
-
 
 	m_rot_x += (mouse_pos.m_y - (height / 2.0f)) * m_delta_time * 0.1f;
 	m_rot_y += (mouse_pos.m_x - (width / 2.0f)) * m_delta_time * 0.1f;

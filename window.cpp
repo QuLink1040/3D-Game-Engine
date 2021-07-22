@@ -38,6 +38,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 		break;
 	}
 
+	case WM_SIZE:
+	{
+		Window* window = (Window*)GetWindowLongPtr(hwnd, GWLP_USERDATA);
+		if(window) window->onSize();
+		break;
+	}
 
 	default:
 		return ::DefWindowProc(hwnd, msg, wparam, lparam);
@@ -71,7 +77,7 @@ Window::Window()
 
 		//Creation of the window
 	m_hwnd = ::CreateWindowEx(WS_EX_OVERLAPPEDWINDOW, L"MyWindowClass", L"3D Game Engine",
-		WS_CAPTION | WS_SYSMENU, CW_USEDEFAULT, CW_USEDEFAULT, 1024, 768,
+		WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 1024, 768,
 		NULL, NULL, NULL, NULL);
 
 	//if the creation fail return false
@@ -147,6 +153,10 @@ void Window::onFocus()
 }
 
 void Window::onFocusLoss()
+{
+}
+
+void Window::onSize()
 {
 }
 

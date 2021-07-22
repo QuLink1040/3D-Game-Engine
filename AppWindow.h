@@ -26,6 +26,8 @@ public:
 	virtual void onFocus() override;
 	virtual void onFocusLoss() override;
 
+	virtual void onSize() override;
+
 	//Inherited via InputListener
 	virtual void onKeyDown(int key) override;
 	virtual void onKeyUp(int key) override;
@@ -76,9 +78,12 @@ private:
 
 	float m_forward = 0.0f;
 	float m_rightward = 0.0f;
+	float m_upward = 0.0f;
 
 	Matrix4x4 m_world_cam;
 	Matrix4x4 m_view_cam;
 	Matrix4x4 m_proj_cam;
+
+	bool m_play_state = false;
 };
 

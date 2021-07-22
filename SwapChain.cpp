@@ -28,10 +28,38 @@ SwapChain::SwapChain(HWND hwnd, UINT width, UINT height, RenderSystem* system) :
 		throw std::exception("Swap chain not created successfully");
 	}
 
-	//Get the back buffer color and create its render target view
-	//--------------------------------
+	reloadBuffers(width, height);
+}
+
+void SwapChain::resize(unsigned int width, unsigned int height)
+{
+	if (m_rtv) m_rtv->Release();
+	if (m_dsv) m_dsv->Release();
+
+	m_swap_chain->ResizeBuffers(1, width, height, DXGI_FORMAT_R8G8B8A8_UNORM, 0);
+	reloadBuffers(width, height);
+}
+
+bool SwapChain::present(bool vsync)
+{
+	m_swap_chain->Present(vsync, NULL);
+
+	return true;
+}
+
+SwapChain::~SwapChain()
+{
+	m_rtv->Release();
+	m_dsv->Release();
+	m_swap_chain->Release();
+}
+
+void SwapChain::reloadBuffers(unsigned int width, unsigned int height)
+{
+	ID3D11Device* device = m_system->m_d3d_device;
+
 	ID3D11Texture2D* buffer = NULL;
-	hr = m_swap_chain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&buffer);
+	HRESULT hr = m_swap_chain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&buffer);
 
 	if (FAILED(hr))
 	{
@@ -66,22 +94,10 @@ SwapChain::SwapChain(HWND hwnd, UINT width, UINT height, RenderSystem* system) :
 	}
 
 	hr = device->CreateDepthStencilView(buffer, NULL, &m_dsv);
+	buffer->Release();
 
 	if (FAILED(hr))
 	{
 		throw std::exception("Swap chain not created successfully");
 	}
-}
-
-bool SwapChain::present(bool vsync)
-{
-	m_swap_chain->Present(vsync, NULL);
-
-	return true;
-}
-
-SwapChain::~SwapChain()
-{
-	m_rtv->Release();
-	m_swap_chain->Release();
 }
