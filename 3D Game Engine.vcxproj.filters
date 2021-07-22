@@ -202,5 +202,8 @@
     <FxCompile Include="VertexMeshLayoutShader.hlsl">
       <Filter>Game Engine\Graphics Engine</Filter>
     </FxCompile>
+    <FxCompile Include="SkyboxShader.hlsl">
+      <Filter>App</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

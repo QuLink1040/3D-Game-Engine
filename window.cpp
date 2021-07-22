@@ -70,7 +70,7 @@ Window::Window()
 		window = this;*/
 
 		//Creation of the window
-	m_hwnd = ::CreateWindowEx(WS_EX_OVERLAPPEDWINDOW, L"MyWindowClass", L"DirectX Application",
+	m_hwnd = ::CreateWindowEx(WS_EX_OVERLAPPEDWINDOW, L"MyWindowClass", L"3D Game Engine",
 		WS_CAPTION | WS_SYSMENU, CW_USEDEFAULT, CW_USEDEFAULT, 1024, 768,
 		NULL, NULL, NULL, NULL);
 
