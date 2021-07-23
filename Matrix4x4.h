@@ -123,6 +123,19 @@ public:
 		setMatrix(out);
 	}
 
+	void operator *(const float pos)
+	{
+		Matrix4x4 out;
+		for (int i = 0; i < 4; i++)
+		{
+			for (int j = 0; j < 4; j++)
+			{
+				out.m_mat[i][j] = m_mat[i][j] * pos;
+			}
+		}
+		setMatrix(out);
+	}
+
 	void setMatrix(const Matrix4x4& matrix)
 	{
 		::memcpy(m_mat, matrix.m_mat, sizeof(float) * 16);

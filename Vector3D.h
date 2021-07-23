@@ -34,6 +34,13 @@ public:
 		return Vector3D(m_x + vec.m_x, m_y + vec.m_y, m_z + vec.m_z);
 	}
 
+	void cross(Vector3D& v1, Vector3D& v2)
+	{
+		this->m_x = v1.m_y * v2.m_z - v1.m_z * v2.m_y;
+		this->m_y = v1.m_z * v2.m_x - v1.m_x * v2.m_z;
+		this->m_z = v1.m_x * v2.m_y - v1.m_y * v2.m_x;
+	}
+
 	~Vector3D()
 	{
 	}
