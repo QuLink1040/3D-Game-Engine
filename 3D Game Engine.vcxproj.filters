@@ -10,9 +10,6 @@
     <ClCompile Include="window.cpp">
       <Filter>Game Engine\Windowing System</Filter>
     </ClCompile>
-    <ClCompile Include="GraphicsEngine.cpp">
-      <Filter>Game Engine\Graphics Engine</Filter>
-    </ClCompile>
     <ClCompile Include="SwapChain.cpp">
       <Filter>Game Engine\Graphics Engine\RenderSystem\Swap Chain</Filter>
     </ClCompile>
@@ -40,12 +37,6 @@
     <ClCompile Include="RenderSystem.cpp">
       <Filter>Game Engine\Graphics Engine\RenderSystem</Filter>
     </ClCompile>
-    <ClCompile Include="ResourceManager.cpp">
-      <Filter>Game Engine\Graphics Engine\ResourceManager</Filter>
-    </ClCompile>
-    <ClCompile Include="Resource.cpp">
-      <Filter>Game Engine\Graphics Engine\ResourceManager</Filter>
-    </ClCompile>
     <ClCompile Include="Texture.cpp">
       <Filter>Game Engine\Graphics Engine\ResourceManager\TextureManager</Filter>
     </ClCompile>
@@ -58,6 +49,15 @@
     <ClCompile Include="MeshManager.cpp">
       <Filter>Game Engine\Graphics Engine\ResourceManager\MeshManager</Filter>
     </ClCompile>
+    <ClCompile Include="GraphicsEngine.cpp">
+      <Filter>Game Engine\Graphics Engine\GraphicsEngineFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\ResManagerFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\ResManagerFiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppWindow.h">
@@ -65,9 +65,6 @@
     </ClInclude>
     <ClInclude Include="window.h">
       <Filter>Game Engine\Windowing System</Filter>
-    </ClInclude>
-    <ClInclude Include="GraphicsEngine.h">
-      <Filter>Game Engine\Graphics Engine</Filter>
     </ClInclude>
     <ClInclude Include="SwapChain.h">
       <Filter>Game Engine\Graphics Engine\RenderSystem\Swap Chain</Filter>
@@ -114,12 +111,6 @@
     <ClInclude Include="Prerequisites.h">
       <Filter>Game Engine\Graphics Engine</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceManager.h">
-      <Filter>Game Engine\Graphics Engine\ResourceManager</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Game Engine\Graphics Engine\ResourceManager</Filter>
-    </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>Game Engine\Graphics Engine\ResourceManager\TextureManager</Filter>
     </ClInclude>
@@ -137,6 +128,15 @@
     </ClInclude>
     <ClInclude Include="VertexMesh.h">
       <Filter>Game Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsEngine.h">
+      <Filter>Game Engine\Graphics Engine\GraphicsEngineFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\ResManagerFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Game Engine\Graphics Engine\ResourceManager\ResManagerFiles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -190,6 +190,12 @@
     </Filter>
     <Filter Include="Game Engine\Graphics Engine\ResourceManager\MeshManager">
       <UniqueIdentifier>{786e7807-bef3-4d1d-9118-f0054c9ba623}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\GraphicsEngineFiles">
+      <UniqueIdentifier>{3bd0a78b-cb88-4fcf-be19-a3bc5eb00566}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\ResourceManager\ResManagerFiles">
+      <UniqueIdentifier>{52413629-0fe4-43ae-8474-b9eb94f6b1f5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
